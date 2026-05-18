@@ -63,12 +63,6 @@
   color: var(--gray);
   cursor: pointer;
   transition: all 0.15s ease;
-  opacity: 0;
-}
-
-.explorer:hover .expand-all,
-.explorer:hover .collapse-all {
-  opacity: 1;
 }
 
 .expand-all:hover,
