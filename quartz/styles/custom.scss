@@ -41,6 +41,42 @@
   opacity: 1;
 }
 
+/* ===== Explorer Expand/Collapse All ===== */
+
+.explorer-actions {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.expand-all,
+.collapse-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--gray);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  opacity: 0;
+}
+
+.explorer:hover .expand-all,
+.explorer:hover .collapse-all {
+  opacity: 1;
+}
+
+.expand-all:hover,
+.collapse-all:hover {
+  background: var(--lightgray);
+  color: var(--darkgray);
+}
+
 /* ===== Note Line Numbers ===== */
 
 .center article {

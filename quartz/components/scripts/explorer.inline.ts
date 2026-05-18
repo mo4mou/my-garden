@@ -268,6 +268,30 @@ async function setupExplorer(currentSlug: FullSlug) {
       icon.addEventListener("click", toggleFolder)
       window.addCleanup(() => icon.removeEventListener("click", toggleFolder))
     }
+
+    // Expand all / Collapse all buttons
+    const expandAllBtn = explorer.querySelector(".expand-all") as HTMLElement
+    const collapseAllBtn = explorer.querySelector(".collapse-all") as HTMLElement
+
+    if (expandAllBtn) {
+      expandAllBtn.addEventListener("click", () => {
+        const folderOuters = explorer.querySelectorAll(".folder-outer")
+        folderOuters.forEach((fo) => fo.classList.add("open"))
+        // Update state
+        currentExplorerState.forEach((item) => (item.collapsed = false))
+        localStorage.setItem("fileTree", JSON.stringify(currentExplorerState))
+      })
+    }
+
+    if (collapseAllBtn) {
+      collapseAllBtn.addEventListener("click", () => {
+        const folderOuters = explorer.querySelectorAll(".folder-outer")
+        folderOuters.forEach((fo) => fo.classList.remove("open"))
+        // Update state
+        currentExplorerState.forEach((item) => (item.collapsed = true))
+        localStorage.setItem("fileTree", JSON.stringify(currentExplorerState))
+      })
+    }
   }
 }
 
