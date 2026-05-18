@@ -129,6 +129,15 @@ function createFolderNode(
     span.textContent = node.displayName
   }
 
+  // Add file count badge
+  const fileCount = node.children.length
+  if (fileCount > 0) {
+    const badge = document.createElement("span")
+    badge.className = "folder-count"
+    badge.textContent = fileCount.toString()
+    titleContainer.appendChild(badge)
+  }
+
   // if the saved state is collapsed or the default state is collapsed
   const isCollapsed =
     currentExplorerState.find((item) => item.path === folderPath)?.collapsed ??

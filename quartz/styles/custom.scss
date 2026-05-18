@@ -1,3 +1,67 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+
+/* ===== Smooth TOC Toggle ===== */
+
+.toc-content {
+  transition: max-height 0.3s ease-in-out, opacity 0.2s ease;
+  overflow: hidden;
+}
+
+.toc-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toc-header svg {
+  transition: transform 0.2s ease;
+  order: -1;
+}
+
+/* ===== Explorer File Count ===== */
+
+.folder-container > div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.folder-count {
+  font-size: 0.75rem;
+  color: var(--gray);
+  margin-left: auto;
+  opacity: 0.7;
+  transition: opacity 0.15s ease;
+}
+
+.folder-button:hover + .folder-count,
+.folder-count:hover {
+  opacity: 1;
+}
+
+/* ===== Note Line Numbers ===== */
+
+.center article {
+  counter-reset: line-number;
+  padding-left: 3.5rem;
+  position: relative;
+}
+
+.center article > * {
+  counter-increment: line-number;
+}
+
+.center article > *::before {
+  content: counter(line-number);
+  position: absolute;
+  left: -2.5rem;
+  width: 2rem;
+  text-align: right;
+  color: rgba(115, 138, 148, 0.4);
+  font-size: 0.85rem;
+  font-family: var(--codeFont);
+  user-select: none;
+  pointer-events: none;
+}
