@@ -19,10 +19,10 @@ export function byDateAndAlphabetical(cfg: GlobalConfiguration): SortFn {
       return 1
     }
 
-    // otherwise, sort lexographically by title
+    // otherwise, sort lexographically by title with numeric support
     const f1Title = f1.frontmatter?.title.toLowerCase() ?? ""
     const f2Title = f2.frontmatter?.title.toLowerCase() ?? ""
-    return f1Title.localeCompare(f2Title)
+    return f1Title.localeCompare(f2Title, undefined, { numeric: true, sensitivity: "base" })
   }
 }
 
@@ -48,7 +48,7 @@ export function byDateAndAlphabeticalFolderFirst(cfg: GlobalConfiguration): Sort
     // otherwise, sort lexographically by title
     const f1Title = f1.frontmatter?.title.toLowerCase() ?? ""
     const f2Title = f2.frontmatter?.title.toLowerCase() ?? ""
-    return f1Title.localeCompare(f2Title)
+    return f1Title.localeCompare(f2Title, undefined, { numeric: true, sensitivity: "base" })
   }
 }
 
