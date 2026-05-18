@@ -1,5 +1,5 @@
 ---
-title: mo4mou's vault
+title: Welcome to mo4mou's vault
 ---
 
 # mo4mou's vault
@@ -34,5 +34,5 @@ title: mo4mou's vault
 
 ---
 
-> [!note] 
+> [!note]
 > 欢迎留言交流，共同进步！
