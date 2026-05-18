@@ -59,11 +59,11 @@ type GiscusElement = Omit<HTMLElement, "dataset"> & {
   }
 }
 
-document.addEventListener("nav", () => {
-  const giscusContainer = document.querySelector(".giscus") as GiscusElement
-  if (!giscusContainer) {
-    return
-  }
+let loaded = false
+
+const loadGiscus = (giscusContainer: GiscusElement) => {
+  if (loaded) return
+  loaded = true
 
   const giscusScript = document.createElement("script")
   giscusScript.src = "https://giscus.app/client.js"
@@ -89,4 +89,23 @@ document.addEventListener("nav", () => {
 
   document.addEventListener("themechange", changeTheme)
   window.addCleanup(() => document.removeEventListener("themechange", changeTheme))
+}
+
+document.addEventListener("nav", () => {
+  const giscusContainer = document.querySelector(".giscus") as GiscusElement
+  if (!giscusContainer) {
+    return
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (entries[0].isIntersecting) {
+        loadGiscus(giscusContainer)
+        observer.disconnect()
+      }
+    },
+    { rootMargin: "200px" },
+  )
+  observer.observe(giscusContainer)
+  window.addCleanup(() => observer.disconnect())
 })

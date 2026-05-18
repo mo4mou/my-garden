@@ -19,7 +19,7 @@ const config: QuartzConfig = {
     defaultDateType: "modified",
     theme: {
       fontOrigin: "local",
-      cdnCaching: true,
+      cdnCaching: false,
       typography: {
         header: "system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif",
         body: "system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif",
@@ -86,8 +86,7 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      // Comment out CustomOgImages to speed up build time
-      Plugin.CustomOgImages(),
+      // Plugin.CustomOgImages(),
     ],
   },
 }
