@@ -1,8 +1,8 @@
 ---
-title: 欢迎来到我的数字花园
+title: mo4mou's vault
 ---
 
-# 欢迎来到我的数字花园
+# mo4mou's vault
 
 这是一个用于记录学习、思考与成长的数字空间。
 
