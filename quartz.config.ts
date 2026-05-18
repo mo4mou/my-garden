@@ -8,24 +8,22 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Quartz 4",
-    pageTitleSuffix: "",
+    pageTitle: "My Garden",
+    pageTitleSuffix: " | 个人博客",
     enableSPA: true,
     enablePopovers: true,
-    analytics: {
-      provider: "plausible",
-    },
-    locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
+    analytics: null,
+    locale: "zh-CN",
+    baseUrl: "mo4mou.github.io",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
-      fontOrigin: "googleFonts",
+      fontOrigin: "local",
       cdnCaching: true,
       typography: {
-        header: "Schibsted Grotesk",
-        body: "Source Sans Pro",
-        code: "IBM Plex Mono",
+        header: "system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif",
+        body: "system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif",
+        code: "'JetBrains Mono', 'Fira Code', Consolas, monospace",
       },
       colors: {
         lightMode: {
