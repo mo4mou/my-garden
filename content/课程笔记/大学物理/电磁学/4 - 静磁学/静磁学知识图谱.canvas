@@ -1,0 +1,193 @@
+{
+	"nodes": [
+		{
+			"id": "n-summary",
+			"type": "text",
+			"text": "## 静磁学公式汇总\n\nB → BS定律/安培环路 → 高斯定理 → 磁场分布 → 安培力/洛伦兹力 → 磁矩",
+			"x": 480,
+			"y": 0,
+			"width": 480,
+			"height": 120
+		},
+		{
+			"id": "n-b",
+			"type": "text",
+			"text": "**磁感应强度**\n\n$$\\vec{F} = q\\vec{v} \\times \\vec{B}$$",
+			"x": 50,
+			"y": 200,
+			"width": 300,
+			"height": 150
+		},
+		{
+			"id": "n-bs",
+			"type": "text",
+			"text": "**毕奥-萨伐尔定律**\n\n$$d\\vec{B} = \\frac{\\mu_0}{4\\pi}\\frac{I d\\vec{l} \\times \\hat{r}}{r^2}$$\n\n无限长直导线：$$B = \\frac{\\mu_0 I}{2\\pi r}$$\n\n圆电流圆心：$$B = \\frac{\\mu_0 I}{2R}$$",
+			"x": 390,
+			"y": 200,
+			"width": 310,
+			"height": 220
+		},
+		{
+			"id": "n-ampere",
+			"type": "text",
+			"text": "**安培环路定理**\n\n$$\\oint \\vec{B}\\cdot d\\vec{l} = \\mu_0 \\sum I_{\\text{enc}}$$\n\n$$\\nabla\\times\\vec{B} = \\mu_0\\vec{J}$$\n\n螺线管：$$B = \\mu_0 n I$$",
+			"x": 750,
+			"y": 200,
+			"width": 320,
+			"height": 220
+		},
+		{
+			"id": "n-flux",
+			"type": "text",
+			"text": "**磁通量**\n\n$$\\Phi = \\iint_S \\vec{B}\\cdot d\\vec{S}$$",
+			"x": 50,
+			"y": 520,
+			"width": 260,
+			"height": 130
+		},
+		{
+			"id": "n-gauss",
+			"type": "text",
+			"text": "**磁场的高斯定理**\n\n$$\\oint_S \\vec{B}\\cdot d\\vec{S} = 0$$\n\n$$\\nabla\\cdot\\vec{B} = 0$$",
+			"x": 390,
+			"y": 520,
+			"width": 260,
+			"height": 170
+		},
+		{
+			"id": "n-dist",
+			"type": "text",
+			"text": "**磁场分布**\n\n直导线：$$B = \\frac{\\mu_0 I}{2\\pi r}$$\n\n螺线管：$$B = \\mu_0 n I$$\n\n螺绕环：$$B = \\frac{\\mu_0 N I}{2\\pi r}$$",
+			"x": 750,
+			"y": 520,
+			"width": 320,
+			"height": 220
+		},
+		{
+			"id": "n-moving-charge",
+			"type": "text",
+			"text": "**运动电荷的磁场**\n\n$$\\vec{B} = \\frac{\\mu_0}{4\\pi}\\frac{q\\vec{v}\\times\\hat{r}}{r^2}$$\n\n由 BS 定律导出：$I d\\vec{l} = q\\vec{v}$",
+			"x": 220,
+			"y": 770,
+			"width": 310,
+			"height": 170
+		},
+		{
+			"id": "n-lorentz",
+			"type": "text",
+			"text": "**洛伦兹力**\n\n$$\\vec{F} = q\\vec{v}\\times\\vec{B}$$\n\n$$R = \\frac{mv}{qB},\\; T = \\frac{2\\pi m}{qB}$$",
+			"x": 570,
+			"y": 1020,
+			"width": 280,
+			"height": 180
+		},
+		{
+			"id": "n-ampere-force",
+			"type": "text",
+			"text": "**安培力**\n\n$$d\\vec{F} = I d\\vec{l}\\times\\vec{B}$$\n\n平行导线：$$\\frac{F}{l} = \\frac{\\mu_0 I_1 I_2}{2\\pi d}$$",
+			"x": 50,
+			"y": 1020,
+			"width": 310,
+			"height": 190
+		},
+		{
+			"id": "n-moment",
+			"type": "text",
+			"text": "**磁矩**\n\n$$\\vec{m} = I S \\,\\hat{n}$$\n\n$$\\vec{\\tau} = \\vec{m}\\times\\vec{B}$$\n\n$$U = -\\vec{m}\\cdot\\vec{B}$$",
+			"x": 930,
+			"y": 1020,
+			"width": 300,
+			"height": 200
+		}
+	],
+	"edges": [
+		{
+			"id": "e1",
+			"fromNode": "n-b",
+			"fromSide": "right",
+			"toNode": "n-bs",
+			"toSide": "left",
+			"label": "定义 B → 计算 B"
+		},
+		{
+			"id": "e2",
+			"fromNode": "n-bs",
+			"fromSide": "right",
+			"toNode": "n-ampere",
+			"toSide": "left",
+			"label": "两种计算方法"
+		},
+		{
+			"id": "e3",
+			"fromNode": "n-b",
+			"fromSide": "bottom",
+			"toNode": "n-flux",
+			"toSide": "top",
+			"label": "Φ = ∫B·dS"
+		},
+		{
+			"id": "e4",
+			"fromNode": "n-flux",
+			"fromSide": "bottom",
+			"toNode": "n-gauss",
+			"toSide": "top",
+			"label": "∮B·dS = 0"
+		},
+		{
+			"id": "e5",
+			"fromNode": "n-bs",
+			"fromSide": "bottom",
+			"toNode": "n-dist",
+			"toSide": "top",
+			"label": "BS 积分"
+		},
+		{
+			"id": "e6",
+			"fromNode": "n-ampere",
+			"fromSide": "bottom",
+			"toNode": "n-dist",
+			"toSide": "top",
+			"label": "对称性→B"
+		},
+		{
+			"id": "e7",
+			"fromNode": "n-bs",
+			"fromSide": "left",
+			"toNode": "n-moving-charge",
+			"toSide": "top",
+			"label": "Idl → qv"
+		},
+		{
+			"id": "e8",
+			"fromNode": "n-moving-charge",
+			"fromSide": "right",
+			"toNode": "n-lorentz",
+			"toSide": "top",
+			"label": "B生成 ↔ 电荷受力"
+		},
+		{
+			"id": "e9",
+			"fromNode": "n-dist",
+			"fromSide": "bottom",
+			"toNode": "n-ampere-force",
+			"toSide": "top",
+			"label": "B → dF = Idl×B"
+		},
+		{
+			"id": "e10",
+			"fromNode": "n-dist",
+			"fromSide": "bottom",
+			"toNode": "n-lorentz",
+			"toSide": "top",
+			"label": "B 分布应用"
+		},
+		{
+			"id": "e11",
+			"fromNode": "n-ampere-force",
+			"fromSide": "right",
+			"toNode": "n-moment",
+			"toSide": "left",
+			"label": "m = ISn̂"
+		}
+	]
+}

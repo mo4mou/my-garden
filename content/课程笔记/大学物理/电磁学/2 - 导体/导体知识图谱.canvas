@@ -1,0 +1,100 @@
+{
+	"nodes": [
+		{
+			"id": "n-summary",
+			"type": "text",
+			"text": "## 导体公式汇总\n\n静电平衡 → 屏蔽 → 电容 → 串并联 → 电场能量",
+			"x": 340,
+			"y": 0,
+			"width": 420,
+			"height": 120
+		},
+		{
+			"id": "n-equilibrium",
+			"type": "text",
+			"text": "**导体静电平衡**\n\n$$\\vec{E}_{\\text{内}} = 0$$\n\n$$E_{\\text{表}} = \\frac{\\sigma}{\\varepsilon_0}$$",
+			"x": 30,
+			"y": 200,
+			"width": 280,
+			"height": 180
+		},
+		{
+			"id": "n-shielding",
+			"type": "text",
+			"text": "**静电屏蔽**\n\n**外屏蔽**：空腔导体$$\\Rightarrow$$腔内$$E=0$$\n\n**内屏蔽**：接地消除对外影响",
+			"x": 30,
+			"y": 480,
+			"width": 280,
+			"height": 170
+		},
+		{
+			"id": "n-capacitor",
+			"type": "text",
+			"text": "**电容**\n\n$$C = \\frac{Q}{U}$$\n\n平行板：$$C = \\frac{\\varepsilon_0 S}{d}$$\n\n球形：$$C = 4\\pi\\varepsilon_0\\frac{R_a R_b}{R_b-R_a}$$",
+			"x": 400,
+			"y": 200,
+			"width": 320,
+			"height": 210
+		},
+		{
+			"id": "n-series-parallel",
+			"type": "text",
+			"text": "**电容器的串并联**\n\n串联：$$\\frac{1}{C_{\\text{eq}}} = \\sum\\frac{1}{C_i}$$\n\n并联：$$C_{\\text{eq}} = \\sum C_i$$",
+			"x": 400,
+			"y": 480,
+			"width": 280,
+			"height": 190
+		},
+		{
+			"id": "n-energy",
+			"type": "text",
+			"text": "**电场能量**\n\n$$W = \\frac{1}{2}CU^2 = \\frac{Q^2}{2C}$$\n\n$$w = \\frac{1}{2}\\varepsilon_0 E^2$$",
+			"x": 770,
+			"y": 200,
+			"width": 280,
+			"height": 170
+		}
+	],
+	"edges": [
+		{
+			"id": "e1",
+			"fromNode": "n-equilibrium",
+			"fromSide": "right",
+			"toNode": "n-capacitor",
+			"toSide": "top",
+			"label": "Q → C = Q/U"
+		},
+		{
+			"id": "e2",
+			"fromNode": "n-equilibrium",
+			"fromSide": "bottom",
+			"toNode": "n-shielding",
+			"toSide": "top",
+			"label": "E_内 = 0 → 屏蔽"
+		},
+		{
+			"id": "e3",
+			"fromNode": "n-capacitor",
+			"fromSide": "left",
+			"toNode": "n-series-parallel",
+			"toSide": "top",
+			"label": "C 的组合"
+		},
+		{
+			"id": "e4",
+			"fromNode": "n-capacitor",
+			"fromSide": "right",
+			"toNode": "n-energy",
+			"toSide": "left",
+			"label": "储能 W = CU²/2"
+		},
+		{
+			"id": "e5",
+			"fromNode": "n-energy",
+			"fromSide": "bottom",
+			"toNode": "n-series-parallel",
+			"toSide": "right",
+			"label": "串并联能量应用"
+		}
+	]
+}

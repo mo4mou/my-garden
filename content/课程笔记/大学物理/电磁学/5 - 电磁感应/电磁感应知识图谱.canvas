@@ -1,0 +1,134 @@
+{
+	"nodes": [
+		{
+			"id": "faraday",
+			"type": "text",
+			"text": "**法拉第电磁感应定律**\n---\n$$\n\\mathcal{E} = -\\frac{d\\Phi}{dt}\n$$",
+			"x": 50,
+			"y": 30,
+			"width": 360,
+			"height": 170
+		},
+		{
+			"id": "motional",
+			"type": "text",
+			"text": "**动生电动势**\n---\n$$\n\\mathcal{E} = \\int (\\vec{v} \\times \\vec{B}) \\cdot d\\vec{l}\n$$",
+			"x": 520,
+			"y": 30,
+			"width": 380,
+			"height": 170
+		},
+		{
+			"id": "induced",
+			"type": "text",
+			"text": "**感生电动势**\n---\n$$\n\\nabla \\times \\vec{E} = -\\frac{\\partial \\vec{B}}{\\partial t}\n$$",
+			"x": 520,
+			"y": 300,
+			"width": 360,
+			"height": 170
+		},
+		{
+			"id": "self",
+			"type": "text",
+			"text": "**自感**\n---\n$$\n\\mathcal{E}_L = -L \\frac{dI}{dt}\n$$",
+			"x": 1050,
+			"y": 30,
+			"width": 320,
+			"height": 150
+		},
+		{
+			"id": "mutual",
+			"type": "text",
+			"text": "**互感**\n---\n$$\n\\mathcal{E}_2 = -M \\frac{dI_1}{dt}\n$$",
+			"x": 1050,
+			"y": 280,
+			"width": 320,
+			"height": 150
+		},
+		{
+			"id": "energy",
+			"type": "text",
+			"text": "**磁场的能量**\n---\n$$\nW = \\frac{1}{2}LI^2\n$$",
+			"x": 1050,
+			"y": 540,
+			"width": 320,
+			"height": 150
+		},
+		{
+			"id": "edist",
+			"type": "text",
+			"text": "**感生电场的分布**\n---\n圆形/矩形磁场下的涡旋电场分布",
+			"x": 150,
+			"y": 580,
+			"width": 320,
+			"height": 130
+		},
+		{
+			"id": "disp",
+			"type": "text",
+			"text": "**位移电流**\n---\n$$\nI_d = \\varepsilon_0 \\frac{d\\Phi_E}{dt}\n$$\n连接电磁感应与麦克斯韦方程组",
+			"x": 80,
+			"y": 810,
+			"width": 320,
+			"height": 170
+		}
+	],
+	"edges": [
+		{
+			"id": "e1",
+			"fromNode": "faraday",
+			"fromSide": "right",
+			"toNode": "motional",
+			"toSide": "left",
+			"label": "切割磁感线"
+		},
+		{
+			"id": "e2",
+			"fromNode": "faraday",
+			"fromSide": "right",
+			"toNode": "induced",
+			"toSide": "left",
+			"label": "变化磁场"
+		},
+		{
+			"id": "e3",
+			"fromNode": "faraday",
+			"fromSide": "right",
+			"toNode": "self",
+			"toSide": "left",
+			"label": "自感现象"
+		},
+		{
+			"id": "e4",
+			"fromNode": "self",
+			"fromSide": "bottom",
+			"toNode": "mutual",
+			"toSide": "top",
+			"label": "线圈耦合"
+		},
+		{
+			"id": "e5",
+			"fromNode": "self",
+			"fromSide": "bottom",
+			"toNode": "energy",
+			"toSide": "top",
+			"label": "储能"
+		},
+		{
+			"id": "e6",
+			"fromNode": "induced",
+			"fromSide": "bottom",
+			"toNode": "edist",
+			"toSide": "top",
+			"label": "涡旋电场分布"
+		},
+		{
+			"id": "e7",
+			"fromNode": "edist",
+			"fromSide": "bottom",
+			"toNode": "disp",
+			"toSide": "top",
+			"label": "位移电流"
+		}
+	]
+}

@@ -1,0 +1,100 @@
+{
+	"nodes": [
+		{
+			"id": "n-gauss",
+			"type": "text",
+			"text": "**介质高斯定理**\n\n$$\\oint_S \\vec{D}\\cdot d\\vec{S} = \\sum q_f$$\n\n$$\\nabla\\cdot\\vec{D} = \\rho_f$$",
+			"x": 940,
+			"y": 220,
+			"width": 290,
+			"height": 190
+		},
+		{
+			"id": "n-bc",
+			"type": "text",
+			"text": "**介质边界条件**\n\n$$E_{1\\tau} = E_{2\\tau}$$\n\n$$D_{2n} - D_{1n} = \\sigma_f$$\n\n$$D_{1n} = D_{2n}\\;(\\sigma_f=0)$$\n\n$$\\frac{\\tan\\theta_1}{\\tan\\theta_2} = \\frac{\\varepsilon_{r1}}{\\varepsilon_{r2}}$$",
+			"x": 560,
+			"y": 585,
+			"width": 360,
+			"height": 270
+		},
+		{
+			"id": "n-cap",
+			"type": "text",
+			"text": "**电容器中的电介质**\n\n$$C = \\varepsilon_r C_0$$\n\n$$C = \\frac{\\varepsilon S}{d}$$",
+			"x": 20,
+			"y": 490,
+			"width": 290,
+			"height": 190
+		},
+		{
+			"id": "n-polar",
+			"type": "text",
+			"text": "**电介质的极化**\n\n$$\\vec{P} = \\frac{\\sum\\vec{p}}{\\Delta V}$$\n\n$$\\sigma_p = \\vec{P}\\cdot\\hat{n}$$\n\n$$\\vec{P} = \\varepsilon_0\\chi\\vec{E}$$",
+			"x": -180,
+			"y": 190,
+			"width": 290,
+			"height": 250
+		},
+		{
+			"id": "n-summary",
+			"type": "text",
+			"text": "## 电介质公式汇总\n\n极化 → 电位移 → 高斯定理 → 边界条件 → 电容器",
+			"x": 42,
+			"y": 0,
+			"width": 535,
+			"height": 140
+		},
+		{
+			"id": "n-d",
+			"type": "text",
+			"text": "**电位移矢量**\n\n$$\\vec{D} = \\varepsilon_0\\vec{E} + \\vec{P}$$\n\n$$\\vec{D} = \\varepsilon\\vec{E}$$\n\n$$\\varepsilon = \\varepsilon_0\\varepsilon_r$$",
+			"x": 380,
+			"y": 220,
+			"width": 320,
+			"height": 220
+		}
+	],
+	"edges": [
+		{
+			"id": "e1",
+			"fromNode": "n-polar",
+			"fromSide": "right",
+			"toNode": "n-d",
+			"toSide": "left",
+			"label": "P → D = ε₀E + P"
+		},
+		{
+			"id": "e2",
+			"fromNode": "n-d",
+			"fromSide": "right",
+			"toNode": "n-gauss",
+			"toSide": "left",
+			"label": "∮D·dS = q_f"
+		},
+		{
+			"id": "e3",
+			"fromNode": "n-gauss",
+			"fromSide": "bottom",
+			"toNode": "n-bc",
+			"toSide": "top",
+			"label": "D_n 跃变条件"
+		},
+		{
+			"id": "e4",
+			"fromNode": "n-bc",
+			"fromSide": "left",
+			"toNode": "n-cap",
+			"toSide": "right",
+			"label": "C = ε_r C₀"
+		},
+		{
+			"id": "e5",
+			"fromNode": "n-d",
+			"fromSide": "bottom",
+			"toNode": "n-bc",
+			"toSide": "top",
+			"label": "D = εE 衔接"
+		}
+	]
+}
