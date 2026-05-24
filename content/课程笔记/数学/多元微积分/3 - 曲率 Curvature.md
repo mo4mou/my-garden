@@ -39,6 +39,6 @@ $$\vec{T}=\frac{\vec{s}'}{|\vec{s}'|}$$
 
 $$\left|\frac{d\vec{T}}{dt}\right|=\left|\frac{\frac{\vec{s}'}{|\vec{s}'|}\times \vec{s}''}{|\vec{s}'|}\right|$$
 
-其中 $\frac{\vec{s}'}{|\vec{s}'|}\times \vec{s}''$ 是切向量旋转效果的变化量（除以模长 $|\vec{s}'|$ 只保留方向），再除以 $|\vec{s}'|$ 完成单位化。结合 $|d\vec{s}|=|\vec{s}'|\,dt$，最终得到：
+其中 $\frac{\vec{s}'}{|\vec{s}'|}\times \vec{s}''$ 是切向量旋转效果的变化量（除以模长 $|\vec{s}'|$ 提取了切向量的旋转分量），再除以 $|\vec{s}'|$ 完成单位化。结合 $|d\vec{s}|=|\vec{s}'|\,dt$，最终得到：
 
 $$\kappa=\frac{|\vec{s}''\times \vec{s}'|}{|\vec{s}'|^{3}}$$

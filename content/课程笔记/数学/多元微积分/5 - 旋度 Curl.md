@@ -8,15 +8,17 @@ author: mo4mou
 ## 定义
 
 > [!note] 旋度
-> 一点处流体微团朝**逆时针方向**变化的速度。
+> 一点处流体微团朝逆时针方向变化的旋转程度
 >
 > $$\text{curl}\,\vec{F}=\nabla \times \vec{F}$$
 
 旋度衡量的是向量场在某点的旋转程度。环量面密度定义为：
 
-$$\nabla \times \vec{F}=\lim_{S \to 0}\frac{\oint_{l}\vec{F}\cdot d\vec{r}}{S}$$
+$$\nabla \times \vec{F}=\lim_{S \to 0}\frac{\oint_{\partial S}\vec{F}\cdot d\vec{r}}{S}$$
 
 其中环量 $\oint_l \vec{F}\cdot d\vec{r}$ 衡量了向量场与曲线的贴合程度（逆时针方向）。
+
+代数意义：分量受不共线分量的影响程度
 
 ## 二维旋度
 
