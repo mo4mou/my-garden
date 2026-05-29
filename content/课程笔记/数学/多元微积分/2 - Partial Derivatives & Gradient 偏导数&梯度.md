@@ -47,6 +47,7 @@ $\vec{v}(x,y)=\left\{ P(x,y),Q(x,y) \right\}$，则偏导数 $\frac{ \partial P 
 ## 链式法则
 
 链式法则本质是两层线性变换的复合
+
 如 $\vec{F}(x(t),y(t))$ ，内部函数的变化量线性变换一次，外部函数的变化量**再**进行一次线性变换，体现为雅可比矩阵相乘：$d\vec{F}(x(t),y(t))=\nabla \vec{F}(x,y)\cdot\left\{ x'(t),y'(t) \right\}\cdot dt$
 
 > [!note] 更为一般的书写

@@ -89,7 +89,7 @@ $$\begin{cases}\oint \vec{F}(P,Q)\cdot d\vec{s}=\iint\left(\frac{\partial Q}{\pa
 
 $$\int_{A}^{B}\vec{F}\cdot d\vec{r}=\varphi(B)-\varphi(A)$$
 
-### 应用：求不规则图形面积
+### 应用：求不规则图形面积（xy平面）
 
 > [!example] 构造旋度为 1 的向量场
 > $$S=\iint_{S}1\,d\sigma=\frac{1}{2}\oint_{\partial S}-y\,dx+x\,dy$$

@@ -45,7 +45,7 @@ $$d\omega=\begin{bmatrix}\displaystyle\frac{\partial u}{\partial x} & \displayst
 
 二者比较可得：
 
-$$\mathrm{Re}A=\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},\quad \mathrm{Im}A=\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}$$
+$$\mathrm{Re}A=\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},\quad \mathrm{Im}A=\frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y}$$
 
 ## Wirtinger 导数
 
