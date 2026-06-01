@@ -141,7 +141,11 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
           const shareId = "${(cfg.analytics as any).shareId ?? ""}";
           if (!shareId) return;
           const host = "${cfg.analytics.host ?? "https://cloud.umami.is"}";
-          const res = await fetch(host + "/api/share/" + shareId + "/views");
+          const endAt = Date.now();
+          const startAt = endAt - 30 * 24 * 60 * 60 * 1000; // last 30 days
+          const res = await fetch(
+            host + "/api/share/" + shareId + "/views?startAt=" + startAt + "&endAt=" + endAt
+          );
           if (res.ok) {
             const data = await res.json();
             const views = data?.views ?? data?.total ?? 0;
