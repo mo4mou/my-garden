@@ -2,7 +2,7 @@ import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 
 export default (() => {
   function VisitorBadge({ displayClass, cfg }: QuartzComponentProps) {
-    const shareId = (cfg.analytics as any)?.shareId
+    const shareId = (cfg?.analytics as any)?.shareId
     if (!shareId) return null
 
     return (
