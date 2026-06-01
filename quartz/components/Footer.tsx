@@ -2,15 +2,18 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import style from "./styles/footer.scss"
 import { version } from "../../package.json"
 import { i18n } from "../i18n"
+import { JSX } from "preact"
 
 interface Options {
   links: Record<string, string>
+  after?: () => JSX.Element
 }
 
 export default ((opts?: Options) => {
   const Footer: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
     const year = new Date().getFullYear()
     const links = opts?.links ?? []
+    const After = opts?.after
     return (
       <footer class={`${displayClass ?? ""}`}>
         <p>
@@ -24,6 +27,7 @@ export default ((opts?: Options) => {
             </li>
           ))}
         </ul>
+        {After && <After />}
       </footer>
     )
   }

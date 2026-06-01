@@ -12,7 +12,12 @@ const config: QuartzConfig = {
     pageTitleSuffix: " | 个人博客",
     enableSPA: true,
     enablePopovers: true,
-    analytics: null,
+    analytics: {
+      provider: "umami",
+      websiteId: "61a60acd-a580-4733-bd59-b297eb40ffd4",
+      host: "https://cloud.umami.is",
+      shareId: "", // 在 Umami 后台 Settings > Shares 创建后填入
+    },
     locale: "zh-CN",
     baseUrl: "notes.mo4mou.com",
     ignorePatterns: ["private", "templates", ".obsidian"],
