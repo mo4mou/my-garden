@@ -132,27 +132,6 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
       umamiScript.defer = true;
 
       document.head.appendChild(umamiScript);
-
-      // Fetch visitor count from Umami share API
-      document.addEventListener("nav", async () => {
-        const countEl = document.getElementById("visitor-count");
-        if (!countEl) return;
-        try {
-          const shareId = "${(cfg.analytics as any).shareId ?? ""}";
-          if (!shareId) return;
-          const host = "${cfg.analytics.host ?? "https://cloud.umami.is"}";
-          const endAt = Date.now();
-          const startAt = endAt - 30 * 24 * 60 * 60 * 1000; // last 30 days
-          const res = await fetch(
-            host + "/api/share/" + shareId + "/views?startAt=" + startAt + "&endAt=" + endAt
-          );
-          if (res.ok) {
-            const data = await res.json();
-            const views = data?.views ?? data?.total ?? 0;
-            countEl.textContent = views.toLocaleString();
-          }
-        } catch (e) { /* ignore */ }
-      });
     `)
   } else if (cfg.analytics?.provider === "goatcounter") {
     componentResources.afterDOMLoaded.push(`
