@@ -25,7 +25,6 @@ export const sharedPageComponents: SharedLayout = {
     links: {
       GitHub: "https://github.com/mo4mou/my-garden",
     },
-    after: Component.VisitorBadge(),
   }),
 }
 

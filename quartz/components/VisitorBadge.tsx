@@ -1,13 +1,14 @@
 import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
+import { JSX } from "preact"
 
 export default (() => {
-  function VisitorBadge({ displayClass, cfg }: QuartzComponentProps) {
+  function VisitorBadge({ cfg }: QuartzComponentProps): JSX.Element | null {
     const shareId = (cfg?.analytics as any)?.shareId
     if (!shareId) return null
 
     return (
       <a
-        class={`visitor-badge ${displayClass ?? ""}`}
+        class="visitor-badge"
         href={`https://cloud.umami.is/share/${shareId}`}
         target="_blank"
         rel="noopener noreferrer"
